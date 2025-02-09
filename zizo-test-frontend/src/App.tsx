@@ -37,7 +37,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <section>
       <div className="logo-wrapper">
         <img
           className="logo"
@@ -75,7 +75,7 @@ const App: React.FC = () => {
           </ul>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
