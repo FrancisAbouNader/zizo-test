@@ -30,7 +30,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
       return buildResponse(400, { error: "No text provided" });
     }
     const { text } = JSON.parse(event.body);
-    const words = text.toLowerCase().replace(/[^\w\s]/g, "").split(" ");
+    const words = text.toLowerCase().split(" ");
     const result: Record<string, number> = {};
     for (const [type, wordsList] of Object.entries(vocabulary)) {
       result[type] = words.filter((word) => wordsList.includes(word)).length;
