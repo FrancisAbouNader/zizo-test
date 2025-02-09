@@ -24,12 +24,12 @@ This repository contains two main parts:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/FrancisAbouNader/zizo-test.git
-   cd your-repo
+
    ```
 
 2. **Navigate to the Frontend Directory:**
    ```bash
-   cd frontend
+   cd zizo-test-frontend
    ```
 
 3. **Install Dependencies:**
@@ -68,7 +68,7 @@ This repository contains two main parts:
 1. **Navigate to the Lambda Directory:**
    Go to the **serverless** folder:
    ```bash
-   cd serverless
+   cd zizo-test-backend
    ```
 
 2. **Set Your AWS Credentials:**
