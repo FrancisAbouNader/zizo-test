@@ -1,6 +1,12 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
-const vocabulary: Record<string, string[]> = {
+
+type Vocabulary = Record<
+  "noun" | "verb" | "adjective" | "adverb" | "preposition" | "conjunction" | 
+  "pronoun" | "interjection" | "determiner" | "numeral", string[]
+>;
+
+const vocabulary:Vocabulary = {
   noun: ["cat", "book", "table", "house", "dog", "car", "tree", "bird", "friend", "city"],
   verb: ["run", "eat", "sleep", "dance", "sing", "swim", "write", "read", "play", "talk"],
   adjective: ["happy", "big", "beautiful", "small", "tall", "smart", "funny", "kind"],
@@ -29,12 +35,16 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
     if (!event.body) {
       return buildResponse(400, { error: "No text provided" });
     }
-    const { text } = JSON.parse(event.body);
+    
+    const { text }: { text: string } = JSON.parse(event.body);
     const words = text.toLowerCase().split(" ");
+    
     const result: Record<string, number> = {};
+    
     for (const [type, wordsList] of Object.entries(vocabulary)) {
-      result[type] = words.filter((word) => wordsList.includes(word)).length;
+      result[type] = words.filter((word: string) => wordsList.includes(word)).length;
     }
+    
     return buildResponse(200, result);
 
   } catch (error) {
