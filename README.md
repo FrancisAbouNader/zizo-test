@@ -18,7 +18,6 @@ This repository contains two main parts:
 ### Prerequisites:
 - **Node.js** (v14 or higher)
 - **npm** (or **yarn**)
-- **Vercel** (or another deployment platform)
 
 ### Steps to Set Up the Frontend:
 
@@ -54,10 +53,6 @@ This repository contains two main parts:
    ```
    This will start the frontend on [http://localhost:3000](http://localhost:3000).
 
-5. **Deploy Frontend to Vercel (or your preferred platform):**
-   - If you haven't already, sign up for **Vercel** at [vercel.com](https://vercel.com/).
-   - Link your GitHub repository to **Vercel** and choose the **frontend** directory during the deployment setup.
-   - Vercel will automatically handle the build process, and your frontend will be live on the URL provided by Vercel.
 
 ---
 
