@@ -17,13 +17,13 @@ fi
 echo "Installing dependencies..."
 npm install
 
-echo "🚀 Deploying to AWS Lambda..."
+echo "Deploying to AWS Lambda..."
 serverless deploy --verbose
 
 DEPLOY_STATUS=$?
 
 if [ $DEPLOY_STATUS -eq 0 ]; then
-  echo "✅ Deployment successful!"
+  echo "Deployment successful!"
 else
   echo "Deployment failed. Check logs for errors."
   exit 1
