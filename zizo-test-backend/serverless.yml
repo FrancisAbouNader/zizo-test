@@ -1,0 +1,22 @@
+org: francis001
+app: zizo-test
+service: zizo-wordcounter-test
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  wordCounter:
+    handler: handler.handler
+    events:
+      - http:
+          path: word-counter
+          method: post
+          cors:
+            origin: "*"  # Allow all origins
+            headers:
+              - Content-Type
+              - Authorization
+            allowCredentials: false  # Set this to true if you want to allow cookies to be sent
+            maxAge: 3600  # Cache pre-flight request for 1 hour
