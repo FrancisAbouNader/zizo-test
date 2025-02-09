@@ -24,7 +24,7 @@ This repository contains two main parts:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/FrancisAbouNader/zizo-test.git
    cd your-repo
    ```
 
